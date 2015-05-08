@@ -1,4 +1,3 @@
-#http://www.r-bloggers.com/rotated-axis-labels-in-r-plots/
 #1. download the file and read into table
 fileurl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 download.file(fileurl,destfile="./myfile.zip")
