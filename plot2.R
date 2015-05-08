@@ -11,10 +11,9 @@ mydf <- mutate(mydf, Date_format = as.Date(Date, "%d/%m/%Y"))
 mydf <- filter(mydf, Date_format >= as.Date("2007-02-01"), Date_format <= as.Date("2007-02-02"))
 
 #3. plot 
-hist(as.numeric(mydf$Global_active_power), 
-     col = "red", 
-     xlab = "Global Active Power(kilowatts)", 
-     main = "Global Active Power")
+x <- strptime(paste(mydf$Date, mydf$Time, sep="/"), format = "%d/%m/%Y/%H:%M:%S")
+y <- mydf$Global_active_power
+plot(x, y, type="l", ylab = "Global Active Power(kilowatts)", xlab="")
 
 #4. convert to png
 dev.copy(png, file = "plot2.png")
